@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createPageUrl } from '../utils/utils';
-import { Button } from '../components/ui/button';
-import { Sparkles, Star, Trophy, Zap, Lock, Crown } from 'lucide-react';
+import { Sparkles, Star, Zap, Lock, Crown, Trophy } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const characters = [

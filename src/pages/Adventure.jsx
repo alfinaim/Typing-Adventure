@@ -12,7 +12,12 @@ const storyData = {
       { id: 2, words: ['lava', 'jump', 'bridge', 'hot', 'flames'], emoji: '🌋' },
       { id: 3, words: ['roar', 'wings', 'scales', 'breath', 'fight', 'brave', 'hero', 'victory'], emoji: '🐲', isBoss: true, bossName: 'Guardian Dragon' },
       { id: 4, words: ['treasure', 'jewels', 'diamonds', 'crown', 'riches'], emoji: '💎' },
-      { id: 5, words: ['run', 'fast', 'escape', 'hurry', 'exit', 'freedom'], emoji: '💨' }
+      { id: 5, words: ['run', 'fast', 'escape', 'hurry', 'exit', 'freedom'], emoji: '💨' },
+      { id: 6, words: ['climb', 'mountain', 'peak', 'clouds', 'high', 'summit'], emoji: '⛰️' },
+      { id: 7, words: ['wisdom', 'ancient', 'elder', 'council', 'dragon', 'legend'], emoji: '🐲' },
+      { id: 8, words: ['ice', 'freeze', 'cold', 'crystal', 'frost', 'blizzard', 'power', 'strength', 'courage'], emoji: '❄️', isBoss: true, bossName: 'Ice Dragon' },
+      { id: 9, words: ['fire', 'wisdom', 'secret', 'ancient', 'knowledge', 'power'], emoji: '🔥' },
+      { id: 10, words: ['master', 'ultimate', 'champion', 'legendary', 'greatest', 'dragon', 'hero'], emoji: '🏆' }
     ]
   },
   unicorn: {
@@ -21,7 +26,12 @@ const storyData = {
       { id: 2, words: ['crystal', 'water', 'glow', 'shine', 'pure'], emoji: '💧' },
       { id: 3, words: ['storm', 'cloud', 'thunder', 'lightning', 'rainbow', 'colors', 'bright', 'hope'], emoji: '☁️', isBoss: true, bossName: 'Dark Cloud' },
       { id: 4, words: ['red', 'orange', 'yellow', 'green', 'blue', 'purple'], emoji: '🌈' },
-      { id: 5, words: ['happy', 'party', 'dance', 'friends', 'joy', 'celebration'], emoji: '🎉' }
+      { id: 5, words: ['happy', 'party', 'dance', 'friends', 'joy', 'celebration'], emoji: '🎉' },
+      { id: 6, words: ['star', 'night', 'meadow', 'dream', 'sparkle', 'wish'], emoji: '⭐' },
+      { id: 7, words: ['fairy', 'wings', 'magic', 'kingdom', 'protect', 'guardian'], emoji: '🧚' },
+      { id: 8, words: ['shadow', 'darkness', 'beast', 'light', 'magic', 'sparkle', 'rainbow', 'hope', 'victory'], emoji: '🌑', isBoss: true, bossName: 'Shadow Beast' },
+      { id: 9, words: ['fountain', 'eternal', 'rainbow', 'magic', 'beauty', 'wonder'], emoji: '⛲' },
+      { id: 10, words: ['festival', 'magical', 'hero', 'legend', 'unicorn', 'forever', 'happy'], emoji: '🎊' }
     ]
   },
   robot: {
@@ -30,7 +40,12 @@ const storyData = {
       { id: 2, words: ['asteroid', 'dodge', 'avoid', 'rocks', 'careful'], emoji: '☄️' },
       { id: 3, words: ['alien', 'laser', 'shield', 'beep', 'battle', 'power', 'circuit', 'victory'], emoji: '👾', isBoss: true, bossName: 'Alien Invader' },
       { id: 4, words: ['power', 'energy', 'electric', 'charge', 'battery'], emoji: '⚡' },
-      { id: 5, words: ['home', 'earth', 'planet', 'success', 'mission', 'complete'], emoji: '🌍' }
+      { id: 5, words: ['home', 'earth', 'planet', 'success', 'mission', 'complete'], emoji: '🌍' },
+      { id: 6, words: ['moon', 'base', 'explore', 'discover', 'crater', 'lunar'], emoji: '🌙' },
+      { id: 7, words: ['meteor', 'shower', 'danger', 'navigate', 'speed', 'pilot'], emoji: '☄️' },
+      { id: 8, words: ['mega', 'giant', 'robot', 'galaxy', 'defend', 'battle', 'laser', 'victory', 'courage'], emoji: '🤖', isBoss: true, bossName: 'Mega Robot' },
+      { id: 9, words: ['wormhole', 'portal', 'dimension', 'explore', 'universe', 'infinite'], emoji: '🌌' },
+      { id: 10, words: ['legend', 'hero', 'galaxies', 'space', 'forever', 'champion', 'robot'], emoji: '🚀' }
     ]
   },
   wizard: {
@@ -39,7 +54,12 @@ const storyData = {
       { id: 2, words: ['book', 'spell', 'wizard', 'learn', 'wisdom'], emoji: '📚' },
       { id: 3, words: ['darkness', 'light', 'battle', 'magic', 'power', 'courage', 'destiny', 'triumph'], emoji: '🔮', isBoss: true, bossName: 'Dark Sorcerer' },
       { id: 4, words: ['peace', 'kingdom', 'happy', 'safe', 'harmony'], emoji: '👑' },
-      { id: 5, words: ['hero', 'legend', 'champion', 'brave', 'honor', 'glory'], emoji: '🏆' }
+      { id: 5, words: ['hero', 'legend', 'champion', 'brave', 'honor', 'glory'], emoji: '🏆' },
+      { id: 6, words: ['ruins', 'ancient', 'artifact', 'mystery', 'explore', 'magic'], emoji: '🗿' },
+      { id: 7, words: ['alliance', 'dragon', 'wizard', 'unite', 'together', 'friendship'], emoji: '🤝' },
+      { id: 8, words: ['demon', 'lord', 'ancient', 'evil', 'magic', 'spell', 'power', 'light', 'victory'], emoji: '👹', isBoss: true, bossName: 'Demon Lord' },
+      { id: 9, words: ['eternal', 'spell', 'protect', 'forever', 'magic', 'shield'], emoji: '✨' },
+      { id: 10, words: ['supreme', 'wizard', 'powerful', 'history', 'magic', 'master', 'legendary'], emoji: '⚡' }
     ]
   }
 };
@@ -74,6 +94,16 @@ export default function Adventure() {
       setPlayerData(JSON.parse(saved));
     }
   }, []);
+
+  useEffect(() => {
+    setCurrentWordIndex(0);
+    setTypedText('');
+    setHearts(3);
+    setStars(0);
+    setBossHealth(100);
+    setGameOver(false);
+    setLevelComplete(false);
+  }, [chapterId, characterId]);
 
   useEffect(() => {
     const handleKeyPress = (e) => {

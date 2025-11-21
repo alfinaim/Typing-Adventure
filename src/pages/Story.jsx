@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createPageUrl } from '../utils/utils';
 import { Button } from '../components/ui/button';
-import { ArrowLeft, Star, Crown, Lock, Play } from 'lucide-react';
+import { ArrowLeft, Star, Crown, Lock, Play, Trophy } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const storyData = {
@@ -47,6 +47,43 @@ const storyData = {
         story: 'The cave is collapsing! Type quickly to escape!',
         words: ['run', 'fast', 'escape', 'hurry', 'exit', 'freedom'],
         emoji: '💨'
+      },
+      { 
+        id: 6, 
+        title: 'The Mountain Peak', 
+        story: 'Climb to the highest peak where ancient dragons rest!',
+        words: ['climb', 'mountain', 'peak', 'clouds', 'high', 'summit'],
+        emoji: '⛰️'
+      },
+      { 
+        id: 7, 
+        title: 'The Dragon Council', 
+        story: 'Meet the wise dragon elders who need your help!',
+        words: ['wisdom', 'ancient', 'elder', 'council', 'dragon', 'legend'],
+        emoji: '🐲'
+      },
+      { 
+        id: 8, 
+        title: 'BOSS: The Ice Dragon!', 
+        story: 'A powerful ice dragon challenges you! Can you defeat it?',
+        words: ['ice', 'freeze', 'cold', 'crystal', 'frost', 'blizzard', 'power', 'strength', 'courage'],
+        emoji: '❄️',
+        isBoss: true,
+        bossName: 'Ice Dragon'
+      },
+      { 
+        id: 9, 
+        title: 'The Dragon\'s Wisdom', 
+        story: 'Learn the secrets of dragon fire and ancient magic!',
+        words: ['fire', 'wisdom', 'secret', 'ancient', 'knowledge', 'power'],
+        emoji: '🔥'
+      },
+      { 
+        id: 10, 
+        title: 'The Ultimate Challenge', 
+        story: 'Prove you are the greatest dragon master!',
+        words: ['master', 'ultimate', 'champion', 'legendary', 'greatest', 'dragon', 'hero'],
+        emoji: '🏆'
       }
     ]
   },
@@ -91,6 +128,43 @@ const storyData = {
         story: 'You saved the forest! Time to celebrate!',
         words: ['happy', 'party', 'dance', 'friends', 'joy', 'celebration'],
         emoji: '🎉'
+      },
+      { 
+        id: 6, 
+        title: 'The Starlight Meadow', 
+        story: 'Discover a meadow where stars fall from the sky!',
+        words: ['star', 'night', 'meadow', 'dream', 'sparkle', 'wish'],
+        emoji: '⭐'
+      },
+      { 
+        id: 7, 
+        title: 'The Fairy Kingdom', 
+        story: 'Help the fairies protect their magical kingdom!',
+        words: ['fairy', 'wings', 'magic', 'kingdom', 'protect', 'guardian'],
+        emoji: '🧚'
+      },
+      { 
+        id: 8, 
+        title: 'BOSS: The Shadow Beast!', 
+        story: 'A creature of darkness threatens the light! Defeat it with magic!',
+        words: ['shadow', 'darkness', 'beast', 'light', 'magic', 'sparkle', 'rainbow', 'hope', 'victory'],
+        emoji: '🌑',
+        isBoss: true,
+        bossName: 'Shadow Beast'
+      },
+      { 
+        id: 9, 
+        title: 'The Rainbow Fountain', 
+        story: 'Activate the eternal rainbow fountain with your magic!',
+        words: ['fountain', 'eternal', 'rainbow', 'magic', 'beauty', 'wonder'],
+        emoji: '⛲'
+      },
+      { 
+        id: 10, 
+        title: 'The Grand Festival', 
+        story: 'All magical creatures celebrate you as a hero!',
+        words: ['festival', 'magical', 'hero', 'legend', 'unicorn', 'forever', 'happy'],
+        emoji: '🎊'
       }
     ]
   },
@@ -135,6 +209,43 @@ const storyData = {
         story: 'The station is saved! Time to return home!',
         words: ['home', 'earth', 'planet', 'success', 'mission', 'complete'],
         emoji: '🌍'
+      },
+      { 
+        id: 6, 
+        title: 'The Moon Base', 
+        story: 'Explore the mysterious moon base and discover its secrets!',
+        words: ['moon', 'base', 'explore', 'discover', 'crater', 'lunar'],
+        emoji: '🌙'
+      },
+      { 
+        id: 7, 
+        title: 'The Meteor Shower', 
+        story: 'Navigate through a dangerous meteor shower!',
+        words: ['meteor', 'shower', 'danger', 'navigate', 'speed', 'pilot'],
+        emoji: '☄️'
+      },
+      { 
+        id: 8, 
+        title: 'BOSS: The Mega Robot!', 
+        story: 'A giant robot from another galaxy attacks! Defend the station!',
+        words: ['mega', 'giant', 'robot', 'galaxy', 'defend', 'battle', 'laser', 'victory', 'courage'],
+        emoji: '🤖',
+        isBoss: true,
+        bossName: 'Mega Robot'
+      },
+      { 
+        id: 9, 
+        title: 'The Wormhole Portal', 
+        story: 'Open a portal to explore new dimensions of space!',
+        words: ['wormhole', 'portal', 'dimension', 'explore', 'universe', 'infinite'],
+        emoji: '🌌'
+      },
+      { 
+        id: 10, 
+        title: 'The Space Legend', 
+        story: 'You are now a legendary space hero across all galaxies!',
+        words: ['legend', 'hero', 'galaxies', 'space', 'forever', 'champion', 'robot'],
+        emoji: '🚀'
       }
     ]
   },
@@ -179,6 +290,43 @@ const storyData = {
         story: 'The kingdom celebrates you as a hero!',
         words: ['hero', 'legend', 'champion', 'brave', 'honor', 'glory'],
         emoji: '🏆'
+      },
+      { 
+        id: 6, 
+        title: 'The Ancient Ruins', 
+        story: 'Explore mysterious ruins filled with magical artifacts!',
+        words: ['ruins', 'ancient', 'artifact', 'mystery', 'explore', 'magic'],
+        emoji: '🗿'
+      },
+      { 
+        id: 7, 
+        title: 'The Dragon Alliance', 
+        story: 'Form an alliance between wizards and dragons!',
+        words: ['alliance', 'dragon', 'wizard', 'unite', 'together', 'friendship'],
+        emoji: '🤝'
+      },
+      { 
+        id: 8, 
+        title: 'BOSS: The Demon Lord!', 
+        story: 'The ancient Demon Lord awakens! Use all your magic to defeat it!',
+        words: ['demon', 'lord', 'ancient', 'evil', 'magic', 'spell', 'power', 'light', 'victory'],
+        emoji: '👹',
+        isBoss: true,
+        bossName: 'Demon Lord'
+      },
+      { 
+        id: 9, 
+        title: 'The Eternal Spell', 
+        story: 'Cast the spell that will protect the kingdom forever!',
+        words: ['eternal', 'spell', 'protect', 'forever', 'magic', 'shield'],
+        emoji: '✨'
+      },
+      { 
+        id: 10, 
+        title: 'The Supreme Wizard', 
+        story: 'You have become the most powerful wizard in history!',
+        words: ['supreme', 'wizard', 'powerful', 'history', 'magic', 'master', 'legendary'],
+        emoji: '⚡'
       }
     ]
   }
@@ -263,7 +411,7 @@ export default function Story() {
           <div className="text-8xl mb-4">{story.emoji}</div>
           <h1 className="text-5xl font-black text-gray-800 mb-3">{story.name}</h1>
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full px-6 py-2">
-            {/* <Trophy className="w-5 h-5 text-purple-600" /> */}
+            <Trophy className="w-5 h-5 text-purple-600" />
             <span className="text-lg font-bold text-gray-700">
               {completedChapters.length} / {story.chapters.length} Chapters Complete
             </span>
